@@ -11,7 +11,7 @@ class MonApplication extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
    return MaterialApp(
-    title: 'Mazazine-Infos',
+    title: 'Gestions des redacteurs',
     debugShowCheckedModeBanner: false,
     home: RedacteurInterface()
    );
