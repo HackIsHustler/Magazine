@@ -37,7 +37,17 @@ class ZoneFormulaire extends StatelessWidget{
               ),
             SizedBox(height: 8,),
             ElevatedButton.icon(
-              onPressed: onAdd, 
+              onPressed: (){
+                if (nomController.text.isEmpty || prenomController.text.isEmpty || emailController.text.isEmpty) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text("Veuillez remplir tous les champs"),
+                    backgroundColor: Colors.red,
+                    ),
+                  );
+                  return;
+                }
+                onAdd();
+              },
               icon: Icon(Icons.add),
               label: Text("ajouter un Redacteur"),
               
