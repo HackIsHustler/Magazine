@@ -46,6 +46,16 @@ class ZoneFormulaire extends StatelessWidget{
                   );
                   return;
                 }
+                //verifier si l'email est valide
+                final emailRegex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
+                if (!emailRegex.hasMatch(emailController.text)) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text("Veuillez entrer un email valide"),
+                    backgroundColor: Colors.red,
+                    ),
+                  );
+                  return;
+                }
                 onAdd();
               },
               icon: Icon(Icons.add),
